@@ -1,0 +1,6 @@
+@AcademiaFS.CSharp.Tuesday_HostAddress = http://localhost:5065
+
+GET {{AcademiaFS.CSharp.Tuesday_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
