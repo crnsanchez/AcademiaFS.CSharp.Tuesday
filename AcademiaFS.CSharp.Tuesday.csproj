@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,22 +8,120 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Farsiman.AuthServer.Extensions" Version="1.0.35371" />
-    <PackageReference Include="Farsiman.Exceptions" Version="1.0.62594" />
-    <PackageReference Include="Farsiman.Extensions.Configuration" Version="2.29723.0" />
-    <PackageReference Include="Farsiman.Infraestructure.Core.Entity.Standard" Version="8.0.60115" />
-    <PackageReference Include="Farsiman.Utilidades.NETCore" Version="1.0.33789" />
+    <Compile Remove="dll\**" />
+    <Compile Remove="_Features\Empresas\**" />
+    <Content Remove="dll\**" />
+    <Content Remove="_Features\Empresas\**" />
+    <EmbeddedResource Remove="dll\**" />
+    <EmbeddedResource Remove="_Features\Empresas\**" />
+    <None Remove="dll\**" />
+    <None Remove="_Features\Empresas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Domain\" />
-    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Estudiantes\" />
     <Folder Include="kubernetes\" />
     <Folder Include="Utility\" />
-    <Folder Include="_Common\" />
-    <Folder Include="_Features\" />
+    <Folder Include="_Common\Dtos\" />
+    <Folder Include="_Common\Entities\" />
+    <Folder Include="_Features\ConteoPersonasGrupo\Dtos\" />
+    <Folder Include="_Features\EstudiantesPromedio\Dtos\" />
+    <Folder Include="_Features\OperacionesAritmeticas\Dtos\" />
+    <Folder Include="_Features\OperacionesAritmeticas\Entities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Farsiman.AuthServer.Extensions">
+      <HintPath>dll\Farsiman.AuthServer.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Domain.Core.Standard">
+      <HintPath>dll\Farsiman.Domain.Core.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Exceptions">
+      <HintPath>dll\Farsiman.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Extensions.Configuration">
+      <HintPath>dll\Farsiman.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Infraestructure.Core.Entity.Standard">
+      <HintPath>dll\Farsiman.Infraestructure.Core.Entity.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Utilidades.NETCore">
+      <HintPath>dll\Farsiman.Utilidades.NETCore.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel">
+      <HintPath>dll\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel.AspNetCore.OAuth2Introspection">
+      <HintPath>dll\IdentityModel.AspNetCore.OAuth2Introspection.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityServer6.AccessTokenValidation">
+      <HintPath>dll\IdentityServer6.AccessTokenValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <HintPath>dll\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>dll\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
+      <HintPath>dll\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational">
+      <HintPath>dll\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions">
+      <HintPath>dll\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens">
+      <HintPath>dll\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>dll\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>dll\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>dll\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>dll\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OpenApi">
+      <HintPath>dll\Microsoft.OpenApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>dll\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact">
+      <HintPath>dll\Serilog.Formatting.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>dll\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching">
+      <HintPath>dll\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Seq">
+      <HintPath>dll\Serilog.Sinks.Seq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>dll\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>dll\System.Security.Permissions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
